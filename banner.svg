@@ -1,0 +1,228 @@
+<svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" width="900" height="260">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="60%" r="60%">
+      <stop offset="0%" stop-color="#2a0000"/>
+      <stop offset="40%" stop-color="#0d0000"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <!-- Central red glow -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff2200" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="#cc0000" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Scanline clip -->
+    <clipPath id="clip">
+      <rect width="900" height="260"/>
+    </clipPath>
+
+    <!-- Ghost glow filter -->
+    <filter id="redGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Text glow -->
+    <filter id="textGlow" x="-10%" y="-40%" width="120%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Subtle glow for title -->
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="2.5" result="b1"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="scanFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <!-- BG -->
+  <rect width="900" height="260" fill="url(#bgGlow)"/>
+
+  <!-- Grid floor -->
+  <g clip-path="url(#clip)" opacity="0.35">
+    <!-- Horizontal lines converging to center -->
+    <line x1="0" y1="260" x2="450" y2="160" stroke="#cc0000" stroke-width="0.5"/>
+    <line x1="0" y1="260" x2="450" y2="160" stroke="#cc0000" stroke-width="0.5"/>
+    <line x1="150" y1="260" x2="450" y2="160" stroke="#cc0000" stroke-width="0.5"/>
+    <line x1="300" y1="260" x2="450" y2="160" stroke="#cc0000" stroke-width="0.5"/>
+    <line x1="450" y1="260" x2="450" y2="160" stroke="#cc0000" stroke-width="0.5"/>
+    <line x1="600" y1="260" x2="450" y2="160" stroke="#cc0000" stroke-width="0.5"/>
+    <line x1="750" y1="260" x2="450" y2="160" stroke="#cc0000" stroke-width="0.5"/>
+    <line x1="900" y1="260" x2="450" y2="160" stroke="#cc0000" stroke-width="0.5"/>
+    <!-- Cross lines -->
+    <line x1="0" y1="245" x2="900" y2="245" stroke="#cc0000" stroke-width="0.4"/>
+    <line x1="0" y1="230" x2="900" y2="230" stroke="#cc0000" stroke-width="0.4"/>
+    <line x1="0" y1="210" x2="900" y2="210" stroke="#cc0000" stroke-width="0.3"/>
+    <line x1="0" y1="185" x2="900" y2="185" stroke="#cc0000" stroke-width="0.3"/>
+    <line x1="0" y1="170" x2="900" y2="170" stroke="#cc0000" stroke-width="0.2"/>
+  </g>
+
+  <!-- Central floor glow -->
+  <ellipse cx="450" cy="200" rx="280" ry="60" fill="url(#coreGlow)" opacity="0.6">
+    <animate attributeName="opacity" values="0.4;0.75;0.4" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Floating red particles -->
+  <g clip-path="url(#clip)" opacity="0.8">
+    <circle cx="80" cy="80" r="1.5" fill="#ff2200">
+      <animate attributeName="cy" values="80;40;80" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.2;1" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="160" cy="120" r="1" fill="#ff4400">
+      <animate attributeName="cy" values="120;70;120" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.1;0.8" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="240" cy="60" r="2" fill="#ff0000">
+      <animate attributeName="cy" values="60;20;60" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="340" cy="100" r="1.2" fill="#cc0000">
+      <animate attributeName="cy" values="100;50;100" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="560" cy="90" r="1.8" fill="#ff2200">
+      <animate attributeName="cy" values="90;40;90" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.2;1" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="660" cy="130" r="1" fill="#ff4400">
+      <animate attributeName="cy" values="130;80;130" dur="5.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0.1;0.7" dur="5.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="760" cy="70" r="2" fill="#ff0000">
+      <animate attributeName="cy" values="70;20;70" dur="3.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="840" cy="110" r="1.3" fill="#cc0000">
+      <animate attributeName="cy" values="110;60;110" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <!-- More particles -->
+    <circle cx="120" cy="190" r="1" fill="#ff3300">
+      <animate attributeName="cy" values="190;140;190" dur="4.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="4.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="780" cy="180" r="1" fill="#ff1100">
+      <animate attributeName="cy" values="180;130;180" dur="3.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="3.9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Data drip lines from center -->
+  <g clip-path="url(#clip)" opacity="0.4">
+    <rect x="444" y="155" width="1" height="60" fill="#ff2200">
+      <animate attributeName="height" values="0;60;0" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="454" y="155" width="1" height="45" fill="#cc0000">
+      <animate attributeName="height" values="0;45;0" dur="2.4s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="2.4s" begin="0.3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="434" y="155" width="1" height="50" fill="#ff0000">
+      <animate attributeName="height" values="0;50;0" dur="1.8s" begin="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="1.8s" begin="0.7s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="464" y="155" width="1" height="35" fill="#ff4400">
+      <animate attributeName="height" values="0;35;0" dur="2.2s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.35;0" dur="2.2s" begin="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="424" y="155" width="1" height="40" fill="#dd0000">
+      <animate attributeName="height" values="0;40;0" dur="2.6s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.35;0" dur="2.6s" begin="0.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Circuit traces top-left -->
+  <g stroke="#cc0000" stroke-width="0.8" fill="none" opacity="0.3">
+    <polyline points="0,30 60,30 60,50 120,50"/>
+    <polyline points="0,60 40,60 40,80 100,80 100,70 160,70"/>
+    <circle cx="60" cy="30" r="2" fill="#ff2200" stroke="none">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="80" r="2" fill="#ff2200" stroke="none">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Circuit traces top-right -->
+  <g stroke="#cc0000" stroke-width="0.8" fill="none" opacity="0.3">
+    <polyline points="900,30 840,30 840,50 780,50"/>
+    <polyline points="900,60 860,60 860,80 800,80 800,70 740,70"/>
+    <circle cx="840" cy="30" r="2" fill="#ff2200" stroke="none">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="80" r="2" fill="#ff2200" stroke="none">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2.7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Scanning line overlay -->
+  <rect x="0" y="0" width="900" height="2" fill="#ff0000" opacity="0.15">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,260;0,0" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.25;0.1;0.25;0" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- LEFT side ghost code drip -->
+  <text x="18" y="40" font-family="monospace" font-size="7" fill="#cc0000" opacity="0.4">01101000</text>
+  <text x="18" y="52" font-family="monospace" font-size="7" fill="#cc0000" opacity="0.3">11001010</text>
+  <text x="18" y="64" font-family="monospace" font-size="7" fill="#ff2200" opacity="0.35">00110101</text>
+  <text x="18" y="76" font-family="monospace" font-size="7" fill="#cc0000" opacity="0.25">10101101</text>
+  <text x="18" y="88" font-family="monospace" font-size="7" fill="#ff0000" opacity="0.2">11110000</text>
+
+  <!-- RIGHT side hex drip -->
+  <text x="852" y="40" font-family="monospace" font-size="7" fill="#cc0000" opacity="0.4">0xDEAD</text>
+  <text x="852" y="52" font-family="monospace" font-size="7" fill="#cc0000" opacity="0.3">0xFF00</text>
+  <text x="852" y="64" font-family="monospace" font-size="7" fill="#ff2200" opacity="0.35">0x4141</text>
+  <text x="852" y="76" font-family="monospace" font-size="7" fill="#cc0000" opacity="0.25">0xBEEF</text>
+  <text x="852" y="88" font-family="monospace" font-size="7" fill="#ff0000" opacity="0.2">0xC0DE</text>
+
+  <!-- MAIN TITLE: "Ghost" white + "Process" red -->
+  <g filter="url(#strongGlow)">
+    <text x="450" y="115" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="72" font-weight="bold" letter-spacing="-1" fill="#ffffff">Ghost<tspan fill="#cc1111">Process</tspan></text>
+  </g>
+
+  <!-- Flicker animation on title -->
+  <g opacity="1">
+    <animate attributeName="opacity" values="1;1;0.85;1;1;0.9;1" dur="5s" repeatCount="indefinite"/>
+    <text x="450" y="115" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="72" font-weight="bold" letter-spacing="-1" fill="transparent" stroke="#ff0000" stroke-width="0.3" opacity="0.4">GhostProcess</text>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="450" y="145" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="14" fill="#ff4444" letter-spacing="6" opacity="0.9">[ PROCESS SCANNER ]</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="235" width="900" height="25" fill="#0d0000" opacity="0.7"/>
+  <text x="20" y="251" font-family="monospace" font-size="10" fill="#ff2200" opacity="0.7">BYTE-SIZED WISDOM</text>
+  <text x="880" y="251" text-anchor="end" font-family="monospace" font-size="10" fill="#cc0000" opacity="0.7">v1.0.0</text>
+
+  <!-- Animated status ticker in bottom bar -->
+  <g clip-path="url(#clip)">
+    <text y="251" font-family="monospace" font-size="10" fill="#aa0000" opacity="0.6" text-anchor="middle">
+      <animateTransform attributeName="transform" type="translate" values="1200,0;-400,0" dur="28s" repeatCount="indefinite"/>
+      ● SCANNING PROCESSES · SHA-256 VERIFICATION · VIRUSTOTAL LOOKUP · YARA RULES · CLAMAV · SIGNATURE CHECK · LIVE MONITORING ●
+    </text>
+  </g>
+
+  <!-- Corner brackets decoration -->
+  <g stroke="#ff2200" stroke-width="1.5" fill="none" opacity="0.6">
+    <polyline points="4,4 4,20 20,20"/>
+    <polyline points="880,4 896,4 896,20"/>
+    <polyline points="4,256 4,240 20,240"/>
+    <polyline points="896,240 896,256 880,256"/>
+  </g>
+
+  <!-- Pulsing corner dots -->
+  <circle cx="4" cy="4" r="2" fill="#ff2200">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="896" cy="4" r="2" fill="#ff2200">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>
