@@ -1,0 +1,144 @@
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" width="900" height="420">
+  <defs>
+    <radialGradient id="uBg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#0a0000"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <filter id="uGlow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="kpiGlow">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="420" fill="url(#uBg)"/>
+
+  <!-- Scanline -->
+  <rect x="0" y="0" width="900" height="1.5" fill="#ff0000" opacity="0.07">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,420;0,0" dur="7s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Section header -->
+  <rect x="0" y="0" width="900" height="38" fill="#0d0000"/>
+  <line x1="0" y1="38" x2="900" y2="38" stroke="#cc0000" stroke-width="1" opacity="0.6"/>
+  <text x="30" y="25" font-family="'Courier New', monospace" font-size="16" font-weight="bold" fill="#ff2200" filter="url(#uGlow)">▸ USAGE</text>
+  <circle cx="16" cy="19" r="4" fill="#ff2200">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- App window mockup -->
+  <rect x="30" y="50" width="840" height="240" rx="6" fill="#080000" stroke="#330000" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect x="30" y="50" width="840" height="28" rx="6" fill="#150000"/>
+  <rect x="30" y="65" width="840" height="13" fill="#150000"/>
+  <circle cx="52" cy="64" r="5" fill="#cc0000" opacity="0.9"/>
+  <circle cx="70" cy="64" r="5" fill="#550000"/>
+  <circle cx="88" cy="64" r="5" fill="#330000"/>
+  <text x="450" y="69" text-anchor="middle" font-family="monospace" font-size="10" fill="#660000">GhostProcess — Process Reputation Analyzer</text>
+
+  <!-- Toolbar -->
+  <rect x="30" y="78" width="840" height="32" fill="#100000"/>
+  <line x1="30" y1="110" x2="870" y2="110" stroke="#330000" stroke-width="1"/>
+
+  <!-- SCAN button -->
+  <rect x="46" y="84" width="80" height="20" rx="3" fill="#440000" stroke="#880000" stroke-width="1">
+    <animate attributeName="fill" values="#440000;#550000;#440000" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="86" y="97" text-anchor="middle" font-family="monospace" font-size="11" fill="#ff4444" font-weight="bold">[ SCAN ]</text>
+
+  <!-- LIVE button with pulse -->
+  <rect x="140" y="84" width="90" height="20" rx="3" fill="#330000" stroke="#550000" stroke-width="1"/>
+  <circle cx="155" cy="94" r="4" fill="#ff0000">
+    <animate attributeName="r" values="4;5.5;4" dur="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.4;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <text x="201" y="97" text-anchor="middle" font-family="monospace" font-size="11" fill="#ff6666" font-weight="bold">LIVE ●</text>
+
+  <!-- EXPORT button -->
+  <rect x="244" y="84" width="90" height="20" rx="3" fill="#1a0000" stroke="#440000" stroke-width="1"/>
+  <text x="289" y="97" text-anchor="middle" font-family="monospace" font-size="11" fill="#cc4444">[ EXPORT ▼ ]</text>
+
+  <!-- KPI cards -->
+  <!-- SCANNED -->
+  <rect x="46" y="118" width="230" height="70" rx="4" fill="#0d0000" stroke="#440000" stroke-width="1"/>
+  <text x="161" y="140" text-anchor="middle" font-family="monospace" font-size="10" fill="#666666">SCANNED</text>
+  <text x="161" y="170" text-anchor="middle" font-family="'Courier New', monospace" font-size="32" font-weight="bold" fill="#dddddd" filter="url(#kpiGlow)">247</text>
+
+  <!-- MALICIOUS -->
+  <rect x="320" y="118" width="230" height="70" rx="4" fill="#0d0000" stroke="#880000" stroke-width="1">
+    <animate attributeName="stroke" values="#880000;#cc0000;#880000" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="435" y="140" text-anchor="middle" font-family="monospace" font-size="10" fill="#ff2200">MALICIOUS</text>
+  <text x="435" y="170" text-anchor="middle" font-family="'Courier New', monospace" font-size="32" font-weight="bold" fill="#ff2200" filter="url(#kpiGlow)">3</text>
+
+  <!-- UNKNOWN -->
+  <rect x="594" y="118" width="230" height="70" rx="4" fill="#0d0000" stroke="#554400" stroke-width="1"/>
+  <text x="709" y="140" text-anchor="middle" font-family="monospace" font-size="10" fill="#ffaa00">UNKNOWN</text>
+  <text x="709" y="170" text-anchor="middle" font-family="'Courier New', monospace" font-size="32" font-weight="bold" fill="#ffaa00" filter="url(#kpiGlow)">12</text>
+
+  <!-- Tabs -->
+  <rect x="46" y="198" width="840" height="1" fill="#330000"/>
+  <rect x="46" y="199" width="110" height="20" rx="2" fill="#220000" stroke="#550000" stroke-width="1"/>
+  <text x="101" y="213" text-anchor="middle" font-family="monospace" font-size="10" fill="#ff4444">Summary</text>
+  <rect x="166" y="199" width="100" height="20" rx="2" fill="#110000"/>
+  <text x="216" y="213" text-anchor="middle" font-family="monospace" font-size="10" fill="#666666">Results</text>
+  <rect x="276" y="199" width="120" height="20" rx="2" fill="#110000"/>
+  <text x="336" y="213" text-anchor="middle" font-family="monospace" font-size="10" fill="#666666">Process Tree</text>
+
+  <!-- Table header -->
+  <rect x="46" y="220" width="840" height="18" fill="#150000"/>
+  <text x="56" y="232" font-family="monospace" font-size="9" fill="#880000">PID</text>
+  <text x="106" y="232" font-family="monospace" font-size="9" fill="#880000">PROCESS NAME</text>
+  <text x="296" y="232" font-family="monospace" font-size="9" fill="#880000">VERDICT</text>
+  <text x="396" y="232" font-family="monospace" font-size="9" fill="#880000">DETECTIONS</text>
+  <text x="526" y="232" font-family="monospace" font-size="9" fill="#880000">SHA-256</text>
+  <text x="756" y="232" font-family="monospace" font-size="9" fill="#880000">SIGNED</text>
+
+  <!-- Table row 1 -->
+  <rect x="46" y="238" width="840" height="16" fill="#080000"/>
+  <text x="56" y="250" font-family="monospace" font-size="9" fill="#888888">4812</text>
+  <text x="106" y="250" font-family="monospace" font-size="9" fill="#aaaaaa">svchost.exe</text>
+  <text x="296" y="250" font-family="monospace" font-size="9" fill="#00cc44">CLEAN</text>
+  <text x="396" y="250" font-family="monospace" font-size="9" fill="#555555">0/72</text>
+
+  <!-- Table row 2 — malicious, red highlight -->
+  <rect x="46" y="254" width="840" height="16" fill="#1a0000">
+    <animate attributeName="fill" values="#1a0000;#220000;#1a0000" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="56" y="266" font-family="monospace" font-size="9" fill="#ff4444">9271</text>
+  <text x="106" y="266" font-family="monospace" font-size="9" fill="#ff4444">x64injector.exe</text>
+  <text x="296" y="266" font-family="monospace" font-size="9" fill="#ff2200" font-weight="bold">MALICIOUS</text>
+  <text x="396" y="266" font-family="monospace" font-size="9" fill="#ff4444">48/72</text>
+
+  <!-- Step instructions on right side -->
+  <g transform="translate(0,288)">
+    <text x="30" y="16" font-family="'Courier New', monospace" font-size="12" fill="#cc0000" font-weight="bold">STEPS</text>
+
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.1s" begin="0.5s" fill="freeze"/>
+      <text x="30" y="38" font-family="'Courier New', monospace" font-size="11" fill="#ff4444">1.</text>
+      <text x="50" y="38" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">Launch   </text>
+      <text x="118" y="38" font-family="'Courier New', monospace" font-size="11" fill="#ff4444">python GhostProcess.py</text>
+    </g>
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.0s" fill="freeze"/>
+      <text x="30" y="56" font-family="'Courier New', monospace" font-size="11" fill="#ff4444">2.</text>
+      <text x="50" y="56" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">Set your API key in the Settings tab</text>
+    </g>
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.5s" fill="freeze"/>
+      <text x="30" y="74" font-family="'Courier New', monospace" font-size="11" fill="#ff4444">3.</text>
+      <text x="50" y="74" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">Click Scan — all processes enumerated and hashed</text>
+    </g>
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.1s" begin="2.0s" fill="freeze"/>
+      <text x="30" y="92" font-family="'Courier New', monospace" font-size="11" fill="#ff4444">4.</text>
+      <text x="50" y="92" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">Right-click any row →</text>
+      <text x="222" y="92" font-family="'Courier New', monospace" font-size="11" fill="#ff4444">Kill · Rescan · Copy Hash · Open Location</text>
+    </g>
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.1s" begin="2.5s" fill="freeze"/>
+      <text x="30" y="110" font-family="'Courier New', monospace" font-size="11" fill="#ff4444">5.</text>
+      <text x="50" y="110" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">Enable Live Monitor to catch new processes as they spawn</text>
+    </g>
+  </g>
+</svg>

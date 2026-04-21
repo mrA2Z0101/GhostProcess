@@ -1,0 +1,102 @@
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" width="900" height="320">
+  <defs>
+    <radialGradient id="tBg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#0d0000"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <filter id="tGlow">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="tClip"><rect width="900" height="320"/></clipPath>
+  </defs>
+
+  <rect width="900" height="320" fill="url(#tBg)"/>
+
+  <!-- Section header -->
+  <rect x="0" y="0" width="900" height="38" fill="#0d0000"/>
+  <line x1="0" y1="38" x2="900" y2="38" stroke="#cc0000" stroke-width="1" opacity="0.6"/>
+  <text x="30" y="25" font-family="'Courier New', monospace" font-size="16" font-weight="bold" fill="#ff2200" filter="url(#tGlow)">▸ WHAT IS IT?</text>
+  <circle cx="16" cy="19" r="4" fill="#ff2200">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Terminal window -->
+  <rect x="30" y="55" width="840" height="220" rx="6" fill="#080000" stroke="#330000" stroke-width="1.5"/>
+  <!-- Terminal title bar -->
+  <rect x="30" y="55" width="840" height="26" rx="6" fill="#1a0000"/>
+  <rect x="30" y="68" width="840" height="13" fill="#1a0000"/>
+  <circle cx="52" cy="68" r="5" fill="#cc0000" opacity="0.8"/>
+  <circle cx="70" cy="68" r="5" fill="#550000" opacity="0.8"/>
+  <circle cx="88" cy="68" r="5" fill="#330000" opacity="0.8"/>
+  <text x="450" y="73" text-anchor="middle" font-family="monospace" font-size="10" fill="#660000">ghostprocess — terminal</text>
+
+  <!-- Scan lines — appear one by one with typewriter delay -->
+  <!-- Line 0: prompt -->
+  <text x="55" y="110" font-family="'Courier New', monospace" font-size="12" fill="#cc0000" opacity="0">
+    ghost@system:~$ ./GhostProcess.py --scan-all
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="0.5s" fill="freeze"/>
+  </text>
+
+  <!-- Line 1: initializing -->
+  <text x="55" y="130" font-family="'Courier New', monospace" font-size="12" fill="#888888" opacity="0">
+    [*] Initializing scanner — enumerating 247 processes...
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.2s" fill="freeze"/>
+  </text>
+
+  <!-- Line 2: CLEAN -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.9s" fill="freeze"/>
+    <text x="55" y="152" font-family="'Courier New', monospace" font-size="12" fill="#888888">[*] Scanning PID 4812  svchost.exe </text>
+    <text x="530" y="152" font-family="'Courier New', monospace" font-size="12" fill="#888888">............</text>
+    <rect x="638" y="140" width="60" height="16" rx="2" fill="#003300"/>
+    <text x="668" y="152" font-family="'Courier New', monospace" font-size="12" fill="#00ff44" text-anchor="middle" font-weight="bold">CLEAN</text>
+  </g>
+
+  <!-- Line 3: CLEAN 2 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="2.5s" fill="freeze"/>
+    <text x="55" y="172" font-family="'Courier New', monospace" font-size="12" fill="#888888">[*] Scanning PID 2044  explorer.exe </text>
+    <text x="536" y="172" font-family="'Courier New', monospace" font-size="12" fill="#888888">............</text>
+    <rect x="644" y="160" width="60" height="16" rx="2" fill="#003300"/>
+    <text x="674" y="172" font-family="'Courier New', monospace" font-size="12" fill="#00ff44" text-anchor="middle" font-weight="bold">CLEAN</text>
+  </g>
+
+  <!-- Line 4: MALICIOUS — red flash -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="3.2s" fill="freeze"/>
+    <text x="55" y="192" font-family="'Courier New', monospace" font-size="12" fill="#ff6666">[!] Scanning PID 9271  x64injector.exe </text>
+    <text x="570" y="192" font-family="'Courier New', monospace" font-size="12" fill="#ff4444">.......</text>
+    <rect x="634" y="180" width="108" height="16" rx="2" fill="#330000">
+      <animate attributeName="fill" values="#330000;#550000;#330000" dur="1.5s" repeatCount="indefinite" begin="3.2s"/>
+    </rect>
+    <text x="688" y="192" font-family="'Courier New', monospace" font-size="11" fill="#ff2200" text-anchor="middle" font-weight="bold">MALICIOUS</text>
+    <text x="760" y="192" font-family="'Courier New', monospace" font-size="11" fill="#ff4444">[ 48/72 ]</text>
+  </g>
+
+  <!-- Line 5: UNKNOWN -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="3.9s" fill="freeze"/>
+    <text x="55" y="212" font-family="'Courier New', monospace" font-size="12" fill="#888888">[?] Scanning PID 1394  unknown_stub.exe </text>
+    <text x="574" y="212" font-family="'Courier New', monospace" font-size="12" fill="#888888">.......</text>
+    <rect x="638" y="200" width="80" height="16" rx="2" fill="#222200"/>
+    <text x="678" y="212" font-family="'Courier New', monospace" font-size="12" fill="#ffaa00" text-anchor="middle" font-weight="bold">UNKNOWN</text>
+  </g>
+
+  <!-- Line 6: summary -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="4.6s" fill="freeze"/>
+    <line x1="55" y1="228" x2="845" y2="228" stroke="#330000" stroke-width="1"/>
+    <text x="55" y="248" font-family="'Courier New', monospace" font-size="12" fill="#cc0000">[✓] Scan complete — 244 CLEAN  /  3 MALICIOUS  /  12 UNKNOWN</text>
+  </g>
+
+  <!-- Blinking cursor -->
+  <rect x="55" y="254" width="8" height="13" fill="#cc0000">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Description paragraph below terminal -->
+  <text x="450" y="298" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#666666">
+    Enumerates · hashes · cross-references · classifies — all processes in parallel with ThreadPoolExecutor
+  </text>
+</svg>

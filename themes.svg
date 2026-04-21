@@ -1,0 +1,107 @@
+<svg viewBox="0 0 900 310" xmlns="http://www.w3.org/2000/svg" width="900" height="310">
+  <defs>
+    <radialGradient id="thBg" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0a0000"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <filter id="thGlow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="310" fill="url(#thBg)"/>
+
+  <!-- Scanline -->
+  <rect x="0" y="0" width="900" height="1.5" fill="#ff0000" opacity="0.07">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,310;0,0" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Section header -->
+  <rect x="0" y="0" width="900" height="38" fill="#0d0000"/>
+  <line x1="0" y1="38" x2="900" y2="38" stroke="#cc0000" stroke-width="1" opacity="0.6"/>
+  <text x="30" y="25" font-family="'Courier New', monospace" font-size="16" font-weight="bold" fill="#ff2200" filter="url(#thGlow)">▸ UI &amp; THEMES</text>
+  <circle cx="16" cy="19" r="4" fill="#ff2200">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Column headers -->
+  <rect x="20" y="48" width="860" height="24" fill="#110000"/>
+  <text x="40" y="64" font-family="'Courier New', monospace" font-size="11" fill="#cc0000" font-weight="bold">THEME NAME</text>
+  <text x="260" y="64" font-family="'Courier New', monospace" font-size="11" fill="#cc0000" font-weight="bold">PALETTE</text>
+  <text x="700" y="64" font-family="'Courier New', monospace" font-size="11" fill="#cc0000" font-weight="bold">SWATCHES</text>
+  <line x1="20" y1="72" x2="880" y2="72" stroke="#330000" stroke-width="1"/>
+
+  <!-- Theme rows -->
+  <!-- SOC Nightfall -->
+  <rect x="20" y="73" width="860" height="28" fill="#080000"/>
+  <text x="40" y="91" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">SOC Nightfall</text>
+  <text x="260" y="91" font-family="'Courier New', monospace" font-size="10" fill="#666666">Deep navy · Sky blue accent · Rose red alerts</text>
+  <rect x="700" y="77" width="16" height="16" rx="2" fill="#0b1220"/>
+  <rect x="720" y="77" width="16" height="16" rx="2" fill="#38bdf8"/>
+  <rect x="740" y="77" width="16" height="16" rx="2" fill="#fb7185"/>
+
+  <!-- Midnight Terminal -->
+  <rect x="20" y="101" width="860" height="28" fill="#050000"/>
+  <text x="40" y="119" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">Midnight Terminal</text>
+  <text x="260" y="119" font-family="'Courier New', monospace" font-size="10" fill="#666666">Pure black · Teal matrix · Coral red alerts</text>
+  <rect x="700" y="105" width="16" height="16" rx="2" fill="#020617"/>
+  <rect x="720" y="105" width="16" height="16" rx="2" fill="#22d3ee"/>
+  <rect x="740" y="105" width="16" height="16" rx="2" fill="#f87171"/>
+
+  <!-- Red Cell -->
+  <rect x="20" y="129" width="860" height="28" fill="#080000"/>
+  <text x="40" y="147" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">Red Cell</text>
+  <text x="260" y="147" font-family="'Courier New', monospace" font-size="10" fill="#666666">Blood red dark · Crimson accent</text>
+  <rect x="700" y="133" width="16" height="16" rx="2" fill="#1a0000"/>
+  <rect x="720" y="133" width="16" height="16" rx="2" fill="#cc0000"/>
+  <rect x="740" y="133" width="16" height="16" rx="2" fill="#ff4444"/>
+
+  <!-- Arctic Blue -->
+  <rect x="20" y="157" width="860" height="28" fill="#050000"/>
+  <text x="40" y="175" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">Arctic Blue</text>
+  <text x="260" y="175" font-family="'Courier New', monospace" font-size="10" fill="#666666">Slate dark · Electric blue accent</text>
+  <rect x="700" y="161" width="16" height="16" rx="2" fill="#1e293b"/>
+  <rect x="720" y="161" width="16" height="16" rx="2" fill="#3b82f6"/>
+  <rect x="740" y="161" width="16" height="16" rx="2" fill="#60a5fa"/>
+
+  <!-- Dracula -->
+  <rect x="20" y="185" width="860" height="28" fill="#080000"/>
+  <text x="40" y="203" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">Dracula</text>
+  <text x="260" y="203" font-family="'Courier New', monospace" font-size="10" fill="#666666">Purple-grey · Pink accent</text>
+  <rect x="700" y="189" width="16" height="16" rx="2" fill="#282a36"/>
+  <rect x="720" y="189" width="16" height="16" rx="2" fill="#bd93f9"/>
+  <rect x="740" y="189" width="16" height="16" rx="2" fill="#ff79c6"/>
+
+  <!-- Solarized Dark -->
+  <rect x="20" y="213" width="860" height="28" fill="#050000"/>
+  <text x="40" y="231" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">Solarized Dark</text>
+  <text x="260" y="231" font-family="'Courier New', monospace" font-size="10" fill="#666666">Warm dark · Orange/yellow accent</text>
+  <rect x="700" y="217" width="16" height="16" rx="2" fill="#002b36"/>
+  <rect x="720" y="217" width="16" height="16" rx="2" fill="#cb4b16"/>
+  <rect x="740" y="217" width="16" height="16" rx="2" fill="#b58900"/>
+
+  <!-- One Dark -->
+  <rect x="20" y="241" width="860" height="28" fill="#080000"/>
+  <text x="40" y="259" font-family="'Courier New', monospace" font-size="11" fill="#cccccc">One Dark</text>
+  <text x="260" y="259" font-family="'Courier New', monospace" font-size="10" fill="#666666">VSCode-style dark · Purple accent</text>
+  <rect x="700" y="245" width="16" height="16" rx="2" fill="#282c34"/>
+  <rect x="720" y="245" width="16" height="16" rx="2" fill="#c678dd"/>
+  <rect x="740" y="245" width="16" height="16" rx="2" fill="#61afef"/>
+
+  <!-- Animated row highlight that cycles through themes -->
+  <rect x="20" y="73" width="860" height="28" fill="#cc0000" opacity="0">
+    <animate attributeName="y" values="73;101;129;157;185;213;241;73" dur="7s" repeatCount="indefinite" calcMode="discrete"/>
+    <animate attributeName="opacity" values="0.06;0.06;0.06;0.06;0.06;0.06;0.06;0.06" dur="7s" repeatCount="indefinite" calcMode="discrete"/>
+  </rect>
+
+  <line x1="20" y1="269" x2="880" y2="269" stroke="#330000" stroke-width="1"/>
+
+  <!-- Footer note -->
+  <text x="450" y="292" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#550000">
+    Custom accent colors: Red · Cyan · Green · Purple · Orange · Amber · Blue · Teal · Indigo
+  </text>
+  <text x="450" y="306" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#440000">
+    Settings persist to ~/.suspicious_process_scanner/ui_config.json
+  </text>
+</svg>
